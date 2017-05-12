@@ -1,9 +1,9 @@
-package lesson1.learning_process;
+package lesson1.helloworld;
 
 public class Rectangle {
 
-    public double a;
-    public double b;
+    double a;
+    double b;
 
     public Rectangle(double a, double b) {
 
