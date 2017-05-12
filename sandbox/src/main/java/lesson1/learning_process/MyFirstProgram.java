@@ -4,21 +4,16 @@ public class MyFirstProgram {
 
     public static void main(String[] args) {
 
-        hello("world");
+        Rectangle r = new Rectangle(3,4);
 
-        double a = 3254.03;
-        double b = 555.67;
 
-        System.out.println("Площадь прямоугольника cо сторонами " + a + " и " + b + " = " + square(a, b));
+        System.out.println("Площадь прямоугольника cо сторонами " + r.a + " и " + r.b + " = " + square(r));
     }
 
-    public static void hello(String w) {
-        System.out.println("Hello," + w + "!");
-    }
 
-    public static double square(double a, double b) {
+    public static double square(Rectangle r) {
 
-        return a * b;
+        return r.a * r.b;
     }
 
 }
