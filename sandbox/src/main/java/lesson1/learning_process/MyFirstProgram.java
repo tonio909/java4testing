@@ -1,3 +1,5 @@
+package lesson1.learning_process;
+
 public class MyFirstProgram {
 
     public static void main(String[] args) {
@@ -14,7 +16,7 @@ public class MyFirstProgram {
         System.out.println("Hello," + w + "!");
     }
 
-    public static double square (double a, double b) {
+    public static double square(double a, double b) {
 
         return a * b;
     }
