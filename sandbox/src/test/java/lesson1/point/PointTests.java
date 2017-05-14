@@ -1,6 +1,5 @@
-package lesson1;
+package lesson1.point;
 
-import lesson1.point.Coordinates;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import static lesson1.point.Point.distance;

@@ -1,6 +1,5 @@
-package lesson1;
+package lesson1.helloworld;
 
-import lesson1.helloworld.Rectangle;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import static lesson1.helloworld.MyFirstProgram.square;
