@@ -4,15 +4,15 @@ public class MyFirstProgram {
 
     public static void main(String[] args) {
 
-        Rectangle rect = new Rectangle(7,9);
+        Rectangle r = new Rectangle(7,9);
 
-        System.out.println("Площадь прямоугольника cо сторонами " + rect.a + " и " + rect.b + " = " + square(rect));
+        System.out.println("Площадь прямоугольника cо сторонами " + r.a + " и " + r.b + " = " + square(r));
     }
 
 
-    public static double square(Rectangle rect) {
+    public static double square(Rectangle r) {
 
-        return rect.a * rect.b;
+        return r.a * r.b;
     }
 
 }
