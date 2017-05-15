@@ -4,7 +4,7 @@ public class Point {
 
     public static void main(String[] args) {
 
-        Coordinates co = new Coordinates(0, 0, 0, 0);
+        Coordinates co = new Coordinates(1, 2, 3, 4);
 
         System.out.println("Расстояние между точками A (" + co.x1 + ", " + co.y1 + ") и B (" +co.x2 + ", " + co.y2 + ") составляет " + distance(co));
 
