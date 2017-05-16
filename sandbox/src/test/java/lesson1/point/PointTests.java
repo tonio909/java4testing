@@ -2,32 +2,41 @@ package lesson1.point;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import static lesson1.point.Point.distance;
 
-public class PointTests {
+public class pointTests {
 
     @Test
-    public void testCoordinates()
+    public void testDistancePositiveNumbers()
 
     {
-        Coordinates co = new Coordinates(4, 2, 6, 3);
-        Assert.assertEquals(distance(co), 2.23606797749979);
+        Point p1 = new Point(1, 2);
+        Point p2 = new Point(3, 4);
+        Assert.assertEquals(p1.distance(p2), 2.8284271247461903);
+    }
+
+
+    @Test
+    public void testDistanceNegativeNumbers()
+
+    {
+        Point p1 = new Point(-1, 2);
+        Point p2 = new Point(3, -4);
+        Assert.assertEquals(p1.distance(p2), 7.211102550927978);
     }
 
     @Test
-    public void testCoordinates1()
+    public void testDistanceZero()
 
     {
-        Coordinates co = new Coordinates(-1, 2, 3, -4);
-        Assert.assertEquals(distance(co), 7.211102550927978);
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(0, 0);
+        Assert.assertEquals(p1.distance(p2), 0.0);
     }
 
-    @Test
-    public void testCoordinates2()
 
-    {
-        Coordinates co = new Coordinates(0, 0, 0, 0);
-        Assert.assertEquals(distance(co), 0.0);
-    }
+
+
+
+
 
 }

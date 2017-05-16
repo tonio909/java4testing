@@ -2,18 +2,17 @@ package lesson1.point;
 
 public class Point {
 
-    public static void main(String[] args) {
+    public double a;
+    public double b;
 
-        Coordinates co = new Coordinates(1, 2, 3, 4);
+    public Point(double a, double b) {
 
-        System.out.println("Расстояние между точками A (" + co.x1 + ", " + co.y1 + ") и B (" +co.x2 + ", " + co.y2 + ") составляет " + distance(co));
-
+        this.a = a;
+        this.b = b;
     }
 
-    public static double distance(Coordinates co) {
+    public double distance(Point p) {
 
-        return Math.sqrt( Math.pow(co.x2 - co.x1, 2) + Math.pow(co.y2 - co.y1, 2) );
-
+        return Math.sqrt(Math.pow((this.a - p.a), 2) + (Math.pow((this.b - p.b), 2)));
     }
-
 }
