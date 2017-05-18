@@ -2,7 +2,6 @@ package lesson2.addressbook;
 
 import org.testng.annotations.Test;
 
-
 public class GroupCreationTests extends TestBase {
 
     @Test
