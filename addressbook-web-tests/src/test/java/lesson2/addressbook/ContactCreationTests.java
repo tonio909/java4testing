@@ -17,7 +17,6 @@ public class ContactCreationTests {
     public void setUp() throws Exception {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files (x86)/Mozilla Firefox/firefox.exe"));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-
         loginAddressBook("admin", "secret");
     }
 
