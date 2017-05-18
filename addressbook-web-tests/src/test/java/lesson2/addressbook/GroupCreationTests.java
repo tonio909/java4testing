@@ -66,7 +66,7 @@ public class GroupCreationTests {
     }
 
     private void gotoGroupPage() {
-        wd.findElement(By.linkText("groups")).click();
+        wd.findElement(By.partialLinkText("groups")).click();
     }
 
     @AfterMethod
