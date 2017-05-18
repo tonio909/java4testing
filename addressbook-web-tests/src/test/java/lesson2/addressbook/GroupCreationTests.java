@@ -16,7 +16,7 @@ import org.openqa.selenium.*;
 import static org.openqa.selenium.OutputType.*;
 
 public class GroupCreationTests {
-    FirefoxDriver wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files (x86)/Mozilla Firefox/firefox.exe"));
+    FirefoxDriver wd;
 
     @BeforeMethod
     public void setUp() throws Exception {
