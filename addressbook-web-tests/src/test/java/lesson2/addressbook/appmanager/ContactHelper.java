@@ -8,7 +8,7 @@ public class ContactHelper {
     private FirefoxDriver wd;
 
     public ContactHelper(FirefoxDriver wd) {
-        this.wd=wd;
+        this.wd = wd;
     }
 
     public void returnToHomepage() {

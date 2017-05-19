@@ -1,7 +1,5 @@
 package lesson2.addressbook.appmanager;
 
-import lesson2.addressbook.tests.ContactCreationTests;
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
