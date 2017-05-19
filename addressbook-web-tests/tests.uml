@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="77.75" y="114.0">lesson2.addressbook.tests.TestBase</node>
+    <node x="103.75" y="0.0">lesson2.addressbook.appmanager.ApplicationManager</node>
+    <node x="213.0" y="228.0">lesson2.addressbook.tests.GroupDeletionTests</node>
+    <node x="0.0" y="228.0">lesson2.addressbook.tests.GroupCreationTests</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="lesson2.addressbook.tests.GroupCreationTests" target="lesson2.addressbook.tests.TestBase">
+      <point x="0.0" y="-18.5" />
+      <point x="96.5" y="203.0" />
+      <point x="140.5" y="203.0" />
+      <point x="-62.75" y="32.0" />
+    </edge>
+    <edge source="lesson2.addressbook.tests.GroupDeletionTests" target="lesson2.addressbook.tests.TestBase">
+      <point x="0.0" y="-18.5" />
+      <point x="310.0" y="203.0" />
+      <point x="266.0" y="203.0" />
+      <point x="62.75" y="32.0" />
+    </edge>
+    <edge source="lesson2.addressbook.tests.TestBase" target="lesson2.addressbook.appmanager.ApplicationManager">
+      <point x="62.75" y="-32.0" />
+      <point x="266.0" y="89.0" />
+      <point x="253.0" y="89.0" />
+      <point x="49.75" y="32.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="159.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
