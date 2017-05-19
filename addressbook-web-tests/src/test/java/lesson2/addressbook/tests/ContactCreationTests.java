@@ -1,4 +1,4 @@
-package lesson2.addressbook;
+package lesson2.addressbook.tests;
 
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.BeforeMethod;
@@ -10,26 +10,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
 
-public class ContactCreationTests {
-    FirefoxDriver wd;
-
-    @BeforeMethod
-    public void setUp() throws Exception {
-        wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files (x86)/Mozilla Firefox/firefox.exe"));
-        wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        loginAddressBook("admin", "secret");
-    }
-
-    private void loginAddressBook(String username, String password) {
-        wd.get("http://localhost/addressbook/");
-        wd.findElement(By.name("user")).click();
-        wd.findElement(By.name("user")).clear();
-        wd.findElement(By.name("user")).sendKeys(username);
-        wd.findElement(By.name("pass")).click();
-        wd.findElement(By.name("pass")).clear();
-        wd.findElement(By.name("pass")).sendKeys(password);
-        wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
-    }
+public class ContactCreationTests extends TestBase {
 
     @Test
     public void testsContactCreation() {
@@ -69,17 +50,5 @@ public class ContactCreationTests {
         wd.findElement(By.linkText("add new")).click();
     }
 
-    @AfterMethod
-    public void tearDown() {
-        wd.quit();
-    }
 
-    public static boolean isAlertPresent(FirefoxDriver wd) {
-        try {
-            wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
 }
