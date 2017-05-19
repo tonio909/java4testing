@@ -1,4 +1,4 @@
-package lesson2.addressbook.tests;
+package lesson2.addressbook.model;
 
 public class ContactData {
     private final String firstName;
