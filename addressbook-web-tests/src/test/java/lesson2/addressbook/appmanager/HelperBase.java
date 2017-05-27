@@ -20,8 +20,11 @@ public abstract class HelperBase {
         click(locator);
 
         if (text != null) {
-            wd.findElement(locator).clear();
-            wd.findElement(locator).sendKeys(text);
+            String existingTest = wd.findElement(locator).getAttribute("value");
+            if (! text.equals(existingTest)) {
+                wd.findElement(locator).clear();
+                wd.findElement(locator).sendKeys(text);
+            }
         }
     }
 
