@@ -6,8 +6,11 @@ import org.testng.annotations.Test;
 public class ContactModificationTests extends TestBase {
 
     @Test
-
     public void testContactModification() {
+
+        if (! app.getContactHelper().isThereAContact()) {
+            app.getContactHelper().createContact(new ContactData("Anton", "Alekseev", "SPb", "+79119004004", "anton.v.alekseev@yandex.ru", "Group name"));
+        }
 
         app.getContactHelper().selectContact();
         app.getContactHelper().editContact();
