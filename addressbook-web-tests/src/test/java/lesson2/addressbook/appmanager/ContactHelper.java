@@ -3,15 +3,17 @@ package lesson2.addressbook.appmanager;
 import lesson2.addressbook.model.ContactData;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class ContactHelper extends HelperBase {
 
     public ContactHelper(WebDriver wd) {
         super(wd);
+    }
+
+    public void gotoContactPage() {
+        click(By.linkText("add new"));
     }
 
     public void returnToHomepage() {
@@ -50,5 +52,16 @@ public class ContactHelper extends HelperBase {
 
     public void submitContactDeletion() {
         click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+    }
+
+    public void createContact(ContactData contact) {
+        gotoContactPage();
+        fillContactForm(contact);
+        submitContactCreation();
+        returnToHomepage();
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
     }
 }
