@@ -14,22 +14,25 @@ public class GroupCreationTests extends TestBase {
         app.getNavigationHelper().gotoGroupPage();
         List<GroupData> before = app.getGroupHelper().getGroupList();
         app.getGroupHelper().initGroupCreation();
+
         GroupData group = new GroupData("Group name", "Group header", "Group footer");
+
         app.getGroupHelper().fillGroupForm(group);
         app.getGroupHelper().submitGroupCreation();
         app.getGroupHelper().returnToGroupPage();
+
         List<GroupData> after = app.getGroupHelper().getGroupList();
         Assert.assertEquals(after.size(), before.size() + 1);
 
 
-        int max = 0;
+        int maxIdValue = 0;
         for (GroupData g : after) {
-            if (g.getId() > max) {
-                max = g.getId();
+            if (g.getId() > maxIdValue) {
+                maxIdValue = g.getId();
             }
         }
 
-        group.setId(max);
+        group.setId(maxIdValue);
 
         before.add(group);
 
