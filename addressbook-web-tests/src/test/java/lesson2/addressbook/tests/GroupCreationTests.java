@@ -3,6 +3,8 @@ package lesson2.addressbook.tests;
 import lesson2.addressbook.model.GroupData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
@@ -24,11 +26,13 @@ public class GroupCreationTests extends TestBase {
         Assert.assertEquals(after.size(), before.size() + 1);
 
 
-        group.setId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
 
         before.add(group);
 
-        Assert.assertEquals(new HashSet<Object>(before), new HashSet<Object>(after));
+        Comparator<? super GroupData> byId = (group1, group2) -> Integer.compare(group1.getId(), group2.getId());
+        before.sort(byId);
+        after.sort(byId);
+        Assert.assertEquals(before, after);
     }
 
 }
