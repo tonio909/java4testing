@@ -3,7 +3,6 @@ package lesson2.addressbook.tests;
 import lesson2.addressbook.model.GroupData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.util.HashSet;
 import java.util.List;
 
@@ -25,14 +24,7 @@ public class GroupCreationTests extends TestBase {
         Assert.assertEquals(after.size(), before.size() + 1);
 
 
-        int maxIdValue = 0;
-        for (GroupData g : after) {
-            if (g.getId() > maxIdValue) {
-                maxIdValue = g.getId();
-            }
-        }
-
-        group.setId(maxIdValue);
+        group.setId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
 
         before.add(group);
 
