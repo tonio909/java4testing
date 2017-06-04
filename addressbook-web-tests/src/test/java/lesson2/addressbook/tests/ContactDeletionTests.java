@@ -17,7 +17,7 @@ public class ContactDeletionTests extends TestBase{
         }
 
         //Проверяем есть ли контакт для удаления
-        app.getContactHelper().gotoContactPage();
+        app.getContactHelper().gotoAddContactFormPage();
 
         if (! app.getContactHelper().isThereAContact()) {
             app.getContactHelper().createContact(new ContactData("Anton", "Alekseev", "SPb", "+79119004004", "anton.v.alekseev@yandex.ru", "Group name"));

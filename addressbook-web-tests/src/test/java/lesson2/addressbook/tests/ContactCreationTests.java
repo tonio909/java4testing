@@ -26,6 +26,7 @@ public class ContactCreationTests extends TestBase {
         Assert.assertEquals(after.size(), before.size() + 1);
 
         before.add(contact);
+
         Comparator<? super ContactData> byId = (contact1, contact2) -> Integer.compare(contact1.getId(), contact2.getId());
         before.sort(byId);
         after.sort(byId);

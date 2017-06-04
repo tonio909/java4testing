@@ -16,7 +16,7 @@ public class ContactHelper extends HelperBase {
         super(wd);
     }
 
-    public void gotoContactPage() {
+    public void gotoAddContactFormPage() {
         click(By.linkText("add new"));
     }
 
@@ -59,7 +59,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void createContact(ContactData contact) {
-        gotoContactPage();
+        gotoAddContactFormPage();
         fillContactForm(contact, true);
         submitContactCreation();
         returnToHomepage();
@@ -68,8 +68,6 @@ public class ContactHelper extends HelperBase {
     public boolean isThereAContact() {
         return isElementPresent(By.name("selected[]"));
     }
-
-    /////////////////////////////////////////////////////////
 
     public List<ContactData> getContactList() {
         List<ContactData> contacts = new ArrayList<ContactData>();
