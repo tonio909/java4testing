@@ -1,6 +1,7 @@
 package lesson2.addressbook.tests;
 
 import lesson2.addressbook.model.ContactData;
+import lesson2.addressbook.model.GroupData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.Comparator;
@@ -12,9 +13,20 @@ public class ContactCreationTests extends TestBase {
 
     public void testsContactCreation() {
 
+        //Проверяем существует ли группа для добавления контакта в следующем шаге
+        app.getNavigationHelper().gotoGroupPage();
+
+        if (! app.getGroupHelper().isThereAGroup()) {
+            app.getGroupHelper().createGroup(new GroupData("Group name", "Group header", "Group footer"));
+        }
+
+        //Добавляем контакт
+        app.getNavigationHelper().gotoHomePage();
+
         List<ContactData> before = app.getContactHelper().getContactList();
 
-        app.getNavigationHelper().gotoContactPage();
+        app.getContactHelper().gotoAddContactFormPage();
+
 
         ContactData contact = new ContactData("Anton", "Alekseev", "SPb", "+79119004004", "anton.v.alekseev@yandex.ru", "Group name");
         app.getContactHelper().fillContactForm(contact,true);
