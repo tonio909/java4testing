@@ -33,7 +33,6 @@ public class GroupModificationTests extends TestBase {
         before.remove(before.size() - 1);
         before.add(group);
 
-
         Comparator<? super GroupData> byId = (group1, group2) -> Integer.compare(group1.getId(), group2.getId());
         before.sort(byId);
         after.sort(byId);
