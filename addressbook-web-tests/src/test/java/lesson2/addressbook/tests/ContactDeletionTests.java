@@ -14,14 +14,14 @@ public class ContactDeletionTests extends TestBase{
     public void testContactDeletion() {
 
         //Проверяем существует ли группа для добавления контакта в следующем шаге
-        app.getNavigationHelper().gotoGroupPage();
+        app.goTo().groupPage();
 
-        if (! app.getGroupHelper().isThereAGroup()) {
-            app.getGroupHelper().createGroup(new GroupData("Group name", "Group header", "Group footer"));
+        if (! app.group().isThereAGroup()) {
+            app.group().create(new GroupData("Group name", "Group header", "Group footer"));
         }
 
         //Проверяем есть ли контакт для удаления
-        app.getNavigationHelper().gotoHomePage();
+        app.goTo().gotoHomePage();
 
 
         if (! app.getContactHelper().isThereAContact()) {
@@ -29,12 +29,12 @@ public class ContactDeletionTests extends TestBase{
         }
 
         //Удаляем контакт
-        app.getNavigationHelper().gotoHomePage();
+        app.goTo().gotoHomePage();
         List<ContactData> before = app.getContactHelper().getContactList();
         app.getContactHelper().selectContact(before.size() - 1);
         app.getContactHelper().submitContactDeletion();
         app.getContactHelper().acceptAlert();
-        app.getNavigationHelper().gotoHomePage();
+        app.goTo().gotoHomePage();
         List<ContactData> after = app.getContactHelper().getContactList();
 
         Assert.assertEquals(after.size(), before.size() - 1);
