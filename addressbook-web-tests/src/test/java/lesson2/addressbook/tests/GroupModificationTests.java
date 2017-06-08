@@ -4,39 +4,34 @@ import lesson2.addressbook.model.GroupData;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.util.Comparator;
-import java.util.List;
+import java.util.Set;
 
 public class GroupModificationTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() {
         app.goTo().groupPage();
-        if (app.group().list().size() == 0) {
-            app.group().create(new GroupData("Group name", "Group header", "Group footer"));
+        if (app.group().all().size() == 0) {
+            app.group().create(new GroupData().withName("Group Name"));
         }
     }
 
     @Test
     public void testGroupModification() {
 
-        List<GroupData> before = app.group().list();
+        Set<GroupData> before = app.group().all();
+        GroupData modifiedGroup = before.iterator().next();
+        GroupData group = new GroupData()
+                .withId(modifiedGroup.getId()).withName("Group name (edited)").withHeader("Group header (edited)").withFooter("Group footer (edited)");
+        app.group().modify(group);
 
-        int index = before.size() - 1;
-        GroupData group = new GroupData(before.get(index).getId(), "Group name (edited)", "Group header (edited)", "Group footer (edited)");
-        app.group().modify(index, group);
-
-        List<GroupData> after = app.group().list();
+        Set<GroupData> after = app.group().all();
 
         Assert.assertEquals(after.size(), before.size());
 
-        before.remove(index);
+        before.remove(modifiedGroup);
         before.add(group);
 
-        Comparator<? super GroupData> byId = (group1, group2) -> Integer.compare(group1.getId(), group2.getId());
-        before.sort(byId);
-        after.sort(byId);
         Assert.assertEquals(before, after);
 
     }

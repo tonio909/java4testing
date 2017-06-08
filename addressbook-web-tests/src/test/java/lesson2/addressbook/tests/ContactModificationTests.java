@@ -17,7 +17,8 @@ public class ContactModificationTests extends TestBase {
         app.goTo().groupPage();
 
         if (! app.group().isThereAGroup()) {
-            app.group().create(new GroupData("Group name", "Group header", "Group footer"));
+            app.group().create(new GroupData()
+                    .withName("Group name (edited)").withHeader("Group header (edited)").withFooter("Group footer (edited)"));
         }
 
         //Проверяем есть ли контакт для модификации
