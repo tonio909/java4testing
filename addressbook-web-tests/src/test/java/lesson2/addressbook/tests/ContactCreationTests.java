@@ -15,10 +15,9 @@ public class ContactCreationTests extends TestBase {
 
         //Проверяем существует ли группа для добавления контакта в следующем шаге
         app.goTo().groupPage();
-
         if (! app.group().isThereAGroup()) {
             app.group().create(new GroupData()
-                    .withName("Group name (edited)").withHeader("Group header (edited)").withFooter("Group footer (edited)"));
+                    .withName("Group name").withHeader("Group header").withFooter("Group footer"));
         }
 
         //Добавляем контакт

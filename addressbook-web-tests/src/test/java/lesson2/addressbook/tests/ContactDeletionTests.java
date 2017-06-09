@@ -18,13 +18,11 @@ public class ContactDeletionTests extends TestBase{
 
         if (! app.group().isThereAGroup()) {
             app.group().create(new GroupData()
-                    .withName("Group name (edited)").withHeader("Group header (edited)").withFooter("Group footer (edited)"));
+                    .withName("Group name").withHeader("Group header").withFooter("Group footer"));
         }
 
         //Проверяем есть ли контакт для удаления
         app.goTo().gotoHomePage();
-
-
         if (! app.getContactHelper().isThereAContact()) {
             app.getContactHelper().createContact(new ContactData("Anton", "Alekseev", "SPb", "+79119004004", "anton.v.alekseev@yandex.ru", "Group name"));
         }
