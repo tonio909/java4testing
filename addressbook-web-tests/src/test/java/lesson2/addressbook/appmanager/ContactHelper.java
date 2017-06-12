@@ -98,14 +98,19 @@ public class ContactHelper extends HelperBase {
         contactCache = new Contacts();
         List<WebElement> elements = wd.findElements(By.name("entry"));
         for (WebElement element: elements) {
+            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));
             String firstname = element.findElements(By.tagName("td")).get(2).getText();
             String lastname = element.findElements(By.tagName("td")).get(1).getText();
             String address = element.findElements(By.tagName("td")).get(3).getText();
             String allPhones = element.findElements(By.tagName("td")).get(5).getText();
             String allEmails = element.findElements(By.tagName("td")).get(4).getText();
-            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));
-            contactCache.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname)
-                    .withAddress(address).withAllPhones(allPhones).withAllEmails(allEmails));
+            contactCache.add(new ContactData()
+                    .withId(id)
+                    .withFirstname(firstname)
+                    .withLastname(lastname)
+                    .withAddress(address)
+                    .withAllPhones(allPhones)
+                    .withAllEmails(allEmails));
         }
         return new Contacts(contactCache);
     }
@@ -122,8 +127,15 @@ public class ContactHelper extends HelperBase {
         String email3 = wd.findElement(By.name("email3")).getAttribute("value");
         String address = wd.findElement(By.tagName("textarea")).getText();
         wd.navigate().back();
-        return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname)
-                .withHomephone(home).withMobilephone(mobile).withWorkphone(work).withAddress(address)
-                .withEmail(email).withEmail2(email2).withEmail3(email3);
+        return new ContactData()
+                .withId(contact.getId())
+                .withFirstname(firstname).withLastname(lastname)
+                .withHomephone(home)
+                .withMobilephone(mobile)
+                .withWorkphone(work)
+                .withAddress(address)
+                .withEmail(email)
+                .withEmail2(email2)
+                .withEmail3(email3);
     }
 }
