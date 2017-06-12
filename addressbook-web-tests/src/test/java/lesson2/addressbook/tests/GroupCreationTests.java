@@ -21,9 +21,28 @@ public class GroupCreationTests extends TestBase {
 
         app.group().create(group);
 
+        assertThat(app.group().count(), equalTo(before.size() + 1));
         Groups after = app.group().all();
-        assertThat(after.size(), equalTo(before.size() + 1));
-
         assertThat(after, equalTo(before.withAdded(group.withId(after.stream().mapToInt((gr) -> gr.getId()).max().getAsInt()))));
+    }
+
+
+    @Test
+    public void testBadGroupCreation() {
+        app.goTo().groupPage();
+        Groups before = app.group().all();
+
+        GroupData group = new GroupData()
+                .withName("Group Name ' Bad")
+                .withHeader("Group Header")
+                .withFooter("Group Footer");
+
+
+        app.group().create(group);
+
+        assertThat(app.group().count(), equalTo(before.size()));
+        Groups after = app.group().all();
+
+        assertThat(after, equalTo(before));
     }
 }
