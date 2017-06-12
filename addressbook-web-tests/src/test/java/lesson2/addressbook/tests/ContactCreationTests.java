@@ -8,19 +8,17 @@ import lesson2.addressbook.model.GroupData;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-
 public class ContactCreationTests extends TestBase {
 
     @BeforeMethod
     //Проверяем существует ли группа для добавления контакта в следующем шаге
     public void ensurePreconditions(){
         app.goTo().groupPage();
-        if (app.group().all().size() == 0) {
+        if (app.group().all().isEmpty()) {
             app.group().create(new GroupData()
                     .withName("Group Name"));
         }
     }
-
 
     @Test
     //Добавляем контакт
