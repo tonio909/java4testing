@@ -78,6 +78,7 @@ public class ContactHelper extends HelperBase {
         initContactModificationById(contact.getId());
         deletedSelectionContact();
         contactCache = null;
+        returntoHomePage();
     }
 
     public boolean isThereAContact() {
