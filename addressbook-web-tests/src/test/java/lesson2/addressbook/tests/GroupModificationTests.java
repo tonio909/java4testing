@@ -4,7 +4,6 @@ import lesson2.addressbook.model.GroupData;
 import lesson2.addressbook.model.Groups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.*;
 import static org.testng.Assert.*;
@@ -15,7 +14,8 @@ public class GroupModificationTests extends TestBase {
     public void ensurePreconditions() {
         app.goTo().groupPage();
         if (app.group().all().isEmpty()) {
-            app.group().create(new GroupData().withName("Group Name"));
+            app.group().create(new GroupData()
+                    .withName("Group Name"));
         }
     }
 
@@ -25,7 +25,10 @@ public class GroupModificationTests extends TestBase {
         Groups before = app.group().all();
         GroupData modifiedGroup = before.iterator().next();
         GroupData group = new GroupData()
-                .withId(modifiedGroup.getId()).withName("Group name (edited)").withHeader("Group header (edited)").withFooter("Group footer (edited)");
+                .withId(modifiedGroup.getId())
+                .withName("Group name (edited)")
+                .withHeader("Group header (edited)")
+                .withFooter("Group footer (edited)");
         app.group().modify(group);
 
         Groups after = app.group().all();

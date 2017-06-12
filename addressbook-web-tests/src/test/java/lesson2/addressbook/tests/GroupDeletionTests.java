@@ -4,7 +4,6 @@ import lesson2.addressbook.model.GroupData;
 import lesson2.addressbook.model.Groups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.testng.Assert.assertEquals;
@@ -15,7 +14,8 @@ public class GroupDeletionTests extends TestBase {
     public void ensurePreconditions() {
         app.goTo().groupPage();
         if (app.group().all().isEmpty()) {
-            app.group().create(new GroupData().withName("Group Name"));
+            app.group().create(new GroupData()
+                    .withName("Group Name"));
         }
     }
 

@@ -5,9 +5,7 @@ import lesson2.addressbook.model.Groups;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class GroupHelper extends HelperBase {
 
@@ -70,11 +68,6 @@ public class GroupHelper extends HelperBase {
         deleteSelectedGroups();
         returnToGroupPage();
     }
-
-    public boolean isThereAGroup() {
-        return isElementPresent(By.name("selected[]"));
-    }
-
 
     public Groups all() {
         Groups groups = new Groups();

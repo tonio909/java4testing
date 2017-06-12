@@ -1,50 +1,46 @@
 package lesson2.addressbook.tests;
 
-import lesson2.addressbook.model.ContactData;
 import lesson2.addressbook.model.GroupData;
-import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import lesson2.addressbook.model.ContactData;
+import lesson2.addressbook.model.Contacts;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.testng.Assert.assertEquals;
 
-import java.util.Comparator;
-import java.util.List;
+public class ContactDeletionTests extends TestBase {
 
-public class ContactDeletionTests extends TestBase{
+    @BeforeMethod
+    public void ensurePreconditions() {
+        //Проверяем существует ли группа для добавления контакта в следующем шаге
+        app.goTo().groupPage();
+        if (app.group().all().isEmpty()) {
+            app.group().create(new GroupData()
+                    .withName("Group Name"));
+        }
+        //Проверяем есть ли контакт для удаления
+        app.goTo().gotoHomePage();
+        if (app.contact().all().isEmpty()) {
+            app.contact().create(new ContactData()
+                    .withFirstname("Anton")
+                    .withLastname("Alekseev")
+                    .withAddress("SPb")
+                    .withMobile("+79119004004")
+                    .withEmail("anton.v.alekseev@yandex.ru")
+                    .withGroup("Group Name"));
+        }
+    }
 
     @Test
     public void testContactDeletion() {
-
-        //Проверяем существует ли группа для добавления контакта в следующем шаге
-        app.goTo().groupPage();
-
-        if (! app.group().isThereAGroup()) {
-            app.group().create(new GroupData()
-                    .withName("Group name").withHeader("Group header").withFooter("Group footer"));
-        }
-
-        //Проверяем есть ли контакт для удаления
+        Contacts before = app.contact().all();
+        ContactData deletedContact = before.iterator().next();
+        app.contact().delete(deletedContact);
         app.goTo().gotoHomePage();
-        if (! app.getContactHelper().isThereAContact()) {
-            app.getContactHelper().createContact(new ContactData("Anton", "Alekseev", "SPb", "+79119004004", "anton.v.alekseev@yandex.ru", "Group name"));
-        }
-
-        //Удаляем контакт
-        app.goTo().gotoHomePage();
-        List<ContactData> before = app.getContactHelper().getContactList();
-        app.getContactHelper().selectContact(before.size() - 1);
-        app.getContactHelper().submitContactDeletion();
-        app.getContactHelper().acceptAlert();
-        app.goTo().gotoHomePage();
-        List<ContactData> after = app.getContactHelper().getContactList();
-
-        Assert.assertEquals(after.size(), before.size() - 1);
-
-        before.remove(before.size() - 1);
-
-        Comparator<? super ContactData> byId = (contact1, contact2) -> Integer.compare(contact1.getId(), contact2.getId());
-        before.sort(byId);
-        after.sort(byId);
-        Assert.assertEquals(before, after);
-
+        Contacts after = app.contact().all();
+        assertEquals(after.size(), before.size() - 1);
+        assertThat(after, equalTo(before.without(deletedContact)));
     }
 
 }
