@@ -1,0 +1,57 @@
+[
+  {
+    "firstname": "Anton 0",
+    "lastname": "Alekseev 0",
+    "address": "SPb 0",
+    "homephone": "+78121112233 0",
+    "workphone": "+78125555555 0",
+    "mobilephone": "79119999999 0",
+    "email": "anton.v.alekseev@yandex.ru 0",
+    "email2": "anton-v-alekseev@yandex.ru 0",
+    "email3": "anton.v.alekseev@ya.ru 0"
+  },
+  {
+    "firstname": "Anton 1",
+    "lastname": "Alekseev 1",
+    "address": "SPb 1",
+    "homephone": "+78121112233 1",
+    "workphone": "+78125555555 1",
+    "mobilephone": "79119999999 1",
+    "email": "anton.v.alekseev@yandex.ru 1",
+    "email2": "anton-v-alekseev@yandex.ru 1",
+    "email3": "anton.v.alekseev@ya.ru 1"
+  },
+  {
+    "firstname": "Anton 2",
+    "lastname": "Alekseev 2",
+    "address": "SPb 2",
+    "homephone": "+78121112233 2",
+    "workphone": "+78125555555 2",
+    "mobilephone": "79119999999 2",
+    "email": "anton.v.alekseev@yandex.ru 2",
+    "email2": "anton-v-alekseev@yandex.ru 2",
+    "email3": "anton.v.alekseev@ya.ru 2"
+  },
+  {
+    "firstname": "Anton 3",
+    "lastname": "Alekseev 3",
+    "address": "SPb 3",
+    "homephone": "+78121112233 3",
+    "workphone": "+78125555555 3",
+    "mobilephone": "79119999999 3",
+    "email": "anton.v.alekseev@yandex.ru 3",
+    "email2": "anton-v-alekseev@yandex.ru 3",
+    "email3": "anton.v.alekseev@ya.ru 3"
+  },
+  {
+    "firstname": "Anton 4",
+    "lastname": "Alekseev 4",
+    "address": "SPb 4",
+    "homephone": "+78121112233 4",
+    "workphone": "+78125555555 4",
+    "mobilephone": "79119999999 4",
+    "email": "anton.v.alekseev@yandex.ru 4",
+    "email2": "anton-v-alekseev@yandex.ru 4",
+    "email3": "anton.v.alekseev@ya.ru 4"
+  }
+]
