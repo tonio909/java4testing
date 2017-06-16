@@ -1,122 +1,27 @@
 <list>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
+  <group>
     <name>Group Name 0</name>
     <header>Group Header 0</header>
-    <footer>Group Header 0</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
+    <footer>Group Footer 0</footer>
+  </group>
+  <group>
     <name>Group Name 1</name>
     <header>Group Header 1</header>
-    <footer>Group Header 1</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
+    <footer>Group Footer 1</footer>
+  </group>
+  <group>
     <name>Group Name 2</name>
     <header>Group Header 2</header>
-    <footer>Group Header 2</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
+    <footer>Group Footer 2</footer>
+  </group>
+  <group>
     <name>Group Name 3</name>
     <header>Group Header 3</header>
-    <footer>Group Header 3</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
+    <footer>Group Footer 3</footer>
+  </group>
+  <group>
     <name>Group Name 4</name>
     <header>Group Header 4</header>
-    <footer>Group Header 4</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 5</name>
-    <header>Group Header 5</header>
-    <footer>Group Header 5</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 6</name>
-    <header>Group Header 6</header>
-    <footer>Group Header 6</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 7</name>
-    <header>Group Header 7</header>
-    <footer>Group Header 7</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 8</name>
-    <header>Group Header 8</header>
-    <footer>Group Header 8</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 9</name>
-    <header>Group Header 9</header>
-    <footer>Group Header 9</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 10</name>
-    <header>Group Header 10</header>
-    <footer>Group Header 10</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 11</name>
-    <header>Group Header 11</header>
-    <footer>Group Header 11</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 12</name>
-    <header>Group Header 12</header>
-    <footer>Group Header 12</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 13</name>
-    <header>Group Header 13</header>
-    <footer>Group Header 13</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 14</name>
-    <header>Group Header 14</header>
-    <footer>Group Header 14</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 15</name>
-    <header>Group Header 15</header>
-    <footer>Group Header 15</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 16</name>
-    <header>Group Header 16</header>
-    <footer>Group Header 16</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 17</name>
-    <header>Group Header 17</header>
-    <footer>Group Header 17</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 18</name>
-    <header>Group Header 18</header>
-    <footer>Group Header 18</footer>
-  </lesson2.addressbook.model.GroupData>
-  <lesson2.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>Group Name 19</name>
-    <header>Group Header 19</header>
-    <footer>Group Header 19</footer>
-  </lesson2.addressbook.model.GroupData>
+    <footer>Group Footer 4</footer>
+  </group>
 </list>
