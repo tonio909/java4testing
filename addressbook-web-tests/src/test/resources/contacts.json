@@ -9,8 +9,7 @@
     "email": "anton.v.alekseev@yandex.ru 0",
     "email2": "anton-v-alekseev@yandex.ru 0",
     "email3": "anton.v.alekseev@ya.ru 0",
-    "group": "Group Name",
-    "photo": {}
+    "group": "Group Name"
   },
   {
     "firstname": "Anton 1",
@@ -22,8 +21,7 @@
     "email": "anton.v.alekseev@yandex.ru 1",
     "email2": "anton-v-alekseev@yandex.ru 1",
     "email3": "anton.v.alekseev@ya.ru 1",
-    "group": "Group Name",
-    "photo": {}
+    "group": "Group Name"
   },
   {
     "firstname": "Anton 2",
@@ -35,8 +33,7 @@
     "email": "anton.v.alekseev@yandex.ru 2",
     "email2": "anton-v-alekseev@yandex.ru 2",
     "email3": "anton.v.alekseev@ya.ru 2",
-    "group": "Group Name",
-    "photo": {}
+    "group": "Group Name"
   },
   {
     "firstname": "Anton 3",
@@ -48,8 +45,7 @@
     "email": "anton.v.alekseev@yandex.ru 3",
     "email2": "anton-v-alekseev@yandex.ru 3",
     "email3": "anton.v.alekseev@ya.ru 3",
-    "group": "Group Name",
-    "photo": {}
+    "group": "Group Name"
   },
   {
     "firstname": "Anton 4",
@@ -61,7 +57,6 @@
     "email": "anton.v.alekseev@yandex.ru 4",
     "email2": "anton-v-alekseev@yandex.ru 4",
     "email3": "anton.v.alekseev@ya.ru 4",
-    "group": "Group Name",
-    "photo": {}
+    "group": "Group Name"
   }
 ]

@@ -62,7 +62,7 @@ public class ContactCreationTests extends TestBase {
         }
     }
 
-    @Test(dataProvider = "validContactsFromXml")
+    @Test(dataProvider = "validContactsFromJson")
     //Добавляем контакт
     public void testContactCreation(ContactData contact) {
         app.goTo().gotoHomePage();
