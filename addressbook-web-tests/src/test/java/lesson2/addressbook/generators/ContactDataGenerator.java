@@ -80,6 +80,7 @@ public class ContactDataGenerator {
                     contact.getEmail(),
                     contact.getEmail2(),
                     contact.getEmail3(),
+                    contact.getGroup(),
                     contact.getPhoto()));
         }
         writer.close();
@@ -90,16 +91,16 @@ public class ContactDataGenerator {
         for (int i = 0; i < count; i++){
             contacts.add(new ContactData()
                     .withFirstname(String.format("Anton %s", i))
-                    .withLastname((String.format("Alekseev %s", i)))
-                    .withAddress((String.format("SPb %s", i)))
-                    .withHomephone((String.format("+78121112233 %s", i)))
-                    .withWorkphone((String.format("+78125555555 %s", i)))
-                    .withMobilephone((String.format("79119999999 %s", i)))
-                    .withEmail((String.format("anton.v.alekseev@yandex.ru %s", i)))
-                    .withEmail2((String.format("anton-v-alekseev@yandex.ru %s", i)))
-                    .withEmail3((String.format("anton.v.alekseev@ya.ru %s", i)))
-                    .withGroup((String.format("Group Name")))
-                    .withPhoto((new File("src/test/resources/img0.jpg"))));
+                    .withLastname(String.format("Alekseev %s", i))
+                    .withAddress(String.format("SPb %s", i))
+                    .withHomephone(String.format("+78121112233 %s", i))
+                    .withWorkphone(String.format("+78125555555 %s", i))
+                    .withMobilephone(String.format("79119999999 %s", i))
+                    .withEmail(String.format("anton.v.alekseev@yandex.ru %s", i))
+                    .withEmail2(String.format("anton-v-alekseev@yandex.ru %s", i))
+                    .withEmail3(String.format("anton.v.alekseev@ya.ru %s", i))
+                    .withGroup(String.format("Group Name"))
+                    .withPhoto(new File("src/test/resources/img0.jpg")));
         }
         return contacts;
     }
