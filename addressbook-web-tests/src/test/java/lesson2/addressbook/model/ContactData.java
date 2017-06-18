@@ -2,7 +2,6 @@ package lesson2.addressbook.model;
 
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
 import java.io.File;
 
 public class ContactData {
