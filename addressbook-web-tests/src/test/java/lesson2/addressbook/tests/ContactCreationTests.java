@@ -34,7 +34,7 @@ public class ContactCreationTests extends TestBase {
         XStream xstream = new XStream();
         xstream.processAnnotations(ContactData.class);
         List<ContactData> contacts = (List<ContactData>) xstream.fromXML(xml);
-        return contacts.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
+        return contacts.stream().map((c) -> new Object[]{c}).collect(Collectors.toList()).iterator();
     }
 
     @DataProvider
@@ -47,14 +47,15 @@ public class ContactCreationTests extends TestBase {
             line = reader.readLine();
         }
         Gson gson = new Gson();
-        List<ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>(){}.getType());
-        return contacts.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
+        List<ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>() {
+        }.getType());
+        return contacts.stream().map((c) -> new Object[]{c}).collect(Collectors.toList()).iterator();
     }
 
 
     @BeforeMethod
     //Проверяем существует ли группа для добавления контакта в следующем шаге
-    public void ensurePreconditions(){
+    public void ensurePreconditions() {
         app.goTo().groupPage();
         if (app.group().all().isEmpty()) {
             app.group().create(new GroupData()
@@ -62,35 +63,15 @@ public class ContactCreationTests extends TestBase {
         }
     }
 
-    @Test
+    @Test(dataProvider = "validContactsFromXml")
     //Добавляем контакт
-    public void testContactCreation() {
+    public void testContactCreation(ContactData contact) {
         app.goTo().gotoHomePage();
         Contacts before = app.contact().all();
-        File photo = new File("src/test/resources/img0.jpg");
-        ContactData contact = new ContactData()
-                .withFirstname("Anton")
-                .withLastname("Alekseev")
-                .withAddress("SPb")
-                .withMobilephone("+79119004004")
-                .withEmail("anton.v.alekseev@yandex.ru")
-                .withGroup("Group Name")
-                .withPhoto(photo);
         app.contact().create(contact);
         app.goTo().gotoHomePage();
         assertThat(app.contact().count(), equalTo(before.size() + 1));
         Contacts after = app.contact().all();
         assertThat(after, equalTo(before.withAdded(contact.withId(after.stream().mapToInt((cont) -> cont.getId()).max().getAsInt()))));
     }
-
-
-    @Test (enabled = false)
-    public void testCurrentDir() {
-        File currentDir = new File(".");
-        System.out.println(currentDir.getAbsolutePath());
-        File photo = new File("src/test/resources/img0.jpg");
-        System.out.println(photo.getAbsolutePath());
-        System.out.println(photo.exists());
-    }
-
 }

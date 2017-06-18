@@ -8,7 +8,9 @@
     "mobilephone": "79119999999 0",
     "email": "anton.v.alekseev@yandex.ru 0",
     "email2": "anton-v-alekseev@yandex.ru 0",
-    "email3": "anton.v.alekseev@ya.ru 0"
+    "email3": "anton.v.alekseev@ya.ru 0",
+    "group": "Group Name",
+    "photo": {}
   },
   {
     "firstname": "Anton 1",
@@ -19,7 +21,9 @@
     "mobilephone": "79119999999 1",
     "email": "anton.v.alekseev@yandex.ru 1",
     "email2": "anton-v-alekseev@yandex.ru 1",
-    "email3": "anton.v.alekseev@ya.ru 1"
+    "email3": "anton.v.alekseev@ya.ru 1",
+    "group": "Group Name",
+    "photo": {}
   },
   {
     "firstname": "Anton 2",
@@ -30,7 +34,9 @@
     "mobilephone": "79119999999 2",
     "email": "anton.v.alekseev@yandex.ru 2",
     "email2": "anton-v-alekseev@yandex.ru 2",
-    "email3": "anton.v.alekseev@ya.ru 2"
+    "email3": "anton.v.alekseev@ya.ru 2",
+    "group": "Group Name",
+    "photo": {}
   },
   {
     "firstname": "Anton 3",
@@ -41,7 +47,9 @@
     "mobilephone": "79119999999 3",
     "email": "anton.v.alekseev@yandex.ru 3",
     "email2": "anton-v-alekseev@yandex.ru 3",
-    "email3": "anton.v.alekseev@ya.ru 3"
+    "email3": "anton.v.alekseev@ya.ru 3",
+    "group": "Group Name",
+    "photo": {}
   },
   {
     "firstname": "Anton 4",
@@ -52,6 +60,8 @@
     "mobilephone": "79119999999 4",
     "email": "anton.v.alekseev@yandex.ru 4",
     "email2": "anton-v-alekseev@yandex.ru 4",
-    "email3": "anton.v.alekseev@ya.ru 4"
+    "email3": "anton.v.alekseev@ya.ru 4",
+    "group": "Group Name",
+    "photo": {}
   }
 ]

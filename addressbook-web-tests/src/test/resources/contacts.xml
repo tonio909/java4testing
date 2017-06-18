@@ -9,6 +9,8 @@
     <email>anton.v.alekseev@yandex.ru 0</email>
     <email2>anton-v-alekseev@yandex.ru 0</email2>
     <email3>anton.v.alekseev@ya.ru 0</email3>
+    <group>Group Name</group>
+    <photo>src\test\resources\img0.jpg</photo>
   </lesson2.addressbook.model.ContactData>
   <lesson2.addressbook.model.ContactData>
     <firstname>Anton 1</firstname>
@@ -20,6 +22,8 @@
     <email>anton.v.alekseev@yandex.ru 1</email>
     <email2>anton-v-alekseev@yandex.ru 1</email2>
     <email3>anton.v.alekseev@ya.ru 1</email3>
+    <group>Group Name</group>
+    <photo>src\test\resources\img0.jpg</photo>
   </lesson2.addressbook.model.ContactData>
   <lesson2.addressbook.model.ContactData>
     <firstname>Anton 2</firstname>
@@ -31,6 +35,8 @@
     <email>anton.v.alekseev@yandex.ru 2</email>
     <email2>anton-v-alekseev@yandex.ru 2</email2>
     <email3>anton.v.alekseev@ya.ru 2</email3>
+    <group>Group Name</group>
+    <photo>src\test\resources\img0.jpg</photo>
   </lesson2.addressbook.model.ContactData>
   <lesson2.addressbook.model.ContactData>
     <firstname>Anton 3</firstname>
@@ -42,6 +48,8 @@
     <email>anton.v.alekseev@yandex.ru 3</email>
     <email2>anton-v-alekseev@yandex.ru 3</email2>
     <email3>anton.v.alekseev@ya.ru 3</email3>
+    <group>Group Name</group>
+    <photo>src\test\resources\img0.jpg</photo>
   </lesson2.addressbook.model.ContactData>
   <lesson2.addressbook.model.ContactData>
     <firstname>Anton 4</firstname>
@@ -53,5 +61,7 @@
     <email>anton.v.alekseev@yandex.ru 4</email>
     <email2>anton-v-alekseev@yandex.ru 4</email2>
     <email3>anton.v.alekseev@ya.ru 4</email3>
+    <group>Group Name</group>
+    <photo>src\test\resources\img0.jpg</photo>
   </lesson2.addressbook.model.ContactData>
 </list>
