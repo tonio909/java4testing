@@ -100,7 +100,6 @@ public class ContactDataGenerator {
                     .withEmail3((String.format("anton.v.alekseev@ya.ru %s", i)))
                     .withGroup((String.format("Group Name")))
                     .withPhoto((new File("src/test/resources/img0.jpg"))));
-
         }
         return contacts;
     }
