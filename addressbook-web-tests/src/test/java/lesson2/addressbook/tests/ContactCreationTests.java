@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 import lesson2.addressbook.model.ContactData;
 import lesson2.addressbook.model.Contacts;
 import lesson2.addressbook.model.GroupData;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;

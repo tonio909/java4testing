@@ -3,7 +3,6 @@ package lesson2.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
 import java.io.File;
 
@@ -11,6 +10,7 @@ import java.io.File;
 @Table(name = "addressbook")
 
 public class ContactData {
+
     @XStreamOmitField
     @Id
     @Column(name = "id")
@@ -25,7 +25,8 @@ public class ContactData {
     private String lastname;
 
     @Expose
-    @Transient
+    @Column(name = "address")
+    @Type(type = "text")
     private String address;
 
     @Expose
@@ -44,15 +45,18 @@ public class ContactData {
     private String mobilephone;
 
     @Expose
-    @Transient
+    @Column(name = "email")
+    @Type(type = "text")
     private String email;
 
     @Expose
-    @Transient
+    @Column(name = "email2")
+    @Type(type = "text")
     private String email2;
 
     @Expose
-    @Transient
+    @Column(name = "email3")
+    @Type(type = "text")
     private String email3;
 
     @Expose
@@ -68,6 +72,7 @@ public class ContactData {
     @Column(name = "photo")
     @Type(type = "text")
     private String photo;
+
 
 
     public int getId() {
@@ -123,7 +128,11 @@ public class ContactData {
     }
 
     public File getPhoto() {
-        return new File(photo);
+        if (photo == null) {
+            return null;
+        } else {
+            return new File(photo);
+        }
     }
 
 
@@ -210,13 +219,8 @@ public class ContactData {
         if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
         if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
         if (address != null ? !address.equals(that.address) : that.address != null) return false;
-        if (homephone != null ? !homephone.equals(that.homephone) : that.homephone != null) return false;
-        if (workphone != null ? !workphone.equals(that.workphone) : that.workphone != null) return false;
         if (mobilephone != null ? !mobilephone.equals(that.mobilephone) : that.mobilephone != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (email2 != null ? !email2.equals(that.email2) : that.email2 != null) return false;
-        if (email3 != null ? !email3.equals(that.email3) : that.email3 != null) return false;
-        return photo != null ? photo.equals(that.photo) : that.photo == null;
+        return email != null ? email.equals(that.email) : that.email == null;
     }
 
     @Override
@@ -225,16 +229,10 @@ public class ContactData {
         result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
         result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
-        result = 31 * result + (homephone != null ? homephone.hashCode() : 0);
-        result = 31 * result + (workphone != null ? workphone.hashCode() : 0);
         result = 31 * result + (mobilephone != null ? mobilephone.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (email2 != null ? email2.hashCode() : 0);
-        result = 31 * result + (email3 != null ? email3.hashCode() : 0);
-        result = 31 * result + (photo != null ? photo.hashCode() : 0);
         return result;
     }
-
 
     @Override
     public String toString() {

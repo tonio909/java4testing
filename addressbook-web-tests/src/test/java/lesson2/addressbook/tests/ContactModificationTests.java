@@ -34,10 +34,10 @@ public class ContactModificationTests extends TestBase{
 
     @Test
     public void testContactModification() {
-        Contacts before = app.contact().all();
-        ContactData modifyContact = before.iterator().next();
+        Contacts before = app.db().contacts();
+        ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData()
-                .withId(modifyContact.getId())
+                .withId(modifiedContact.getId())
                 .withFirstname("Anton (edited)")
                 .withLastname("Alekseev (edited)")
                 .withAddress("SPb (edited)")
@@ -46,7 +46,10 @@ public class ContactModificationTests extends TestBase{
                 .withGroup("Group Name");
         app.contact().modify(contact);
         assertThat(app.contact().count(), equalTo(before.size()));
-        Contacts after = app.contact().all();
-        assertThat(after, equalTo(before.without(modifyContact).withAdded(contact)));
+        Contacts after = app.db().contacts();
+        assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
+
     }
+
+
 }

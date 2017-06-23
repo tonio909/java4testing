@@ -1,5 +1,6 @@
 package lesson2.addressbook.tests;
 
+import lesson2.addressbook.model.GroupData;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import lesson2.addressbook.model.ContactData;
@@ -10,6 +11,11 @@ public class ContactAddressTest extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() {
+        app.goTo().groupPage();
+        if (app.group().all().isEmpty()) {
+            app.group().create(new GroupData()
+                    .withName("Group Name"));
+        }
         app.goTo().gotoHomePage();
         if (app.contact().all().isEmpty()) {
             app.contact().create(new ContactData()
