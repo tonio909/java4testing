@@ -48,6 +48,7 @@ public class DbHelper {
         session.close();
         return group;
     }
+
     public ContactData contactById(int id){
         Session session = sessionFactory.openSession();
         session.beginTransaction();

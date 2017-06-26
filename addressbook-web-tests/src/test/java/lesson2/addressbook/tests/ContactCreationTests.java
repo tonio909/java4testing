@@ -3,6 +3,7 @@ package lesson2.addressbook.tests;
 import com.google.gson.Gson;
 import com.google.common.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
+import lesson2.addressbook.model.Groups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -64,6 +65,7 @@ public class ContactCreationTests extends TestBase {
     @Test(dataProvider = "validContactsFromJson")
     //Добавляем контакт
     public void testContactCreation(ContactData contact) {
+        Groups groups = app.db().groups();
         app.goTo().gotoHomePage();
         Contacts before = app.db().contacts();
         app.contact().create(contact);

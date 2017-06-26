@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import lesson2.addressbook.model.ContactData;
 import lesson2.addressbook.model.Contacts;
 import java.util.List;
@@ -19,7 +18,7 @@ public class ContactHelper extends HelperBase {
         super(wd);
     }
 
-    public void returntoHomePage() {
+    public void returnToHomePage() {
         click(By.linkText("home"));
     }
 
@@ -69,7 +68,7 @@ public class ContactHelper extends HelperBase {
         fillContactForm(contact,true);
         submitContactCreation();
         contactCache = null;
-        returntoHomePage();
+        returnToHomePage();
     }
 
     public void modify(ContactData contact) {
@@ -77,14 +76,14 @@ public class ContactHelper extends HelperBase {
         fillContactForm(contact,false);
         submitContactModification();
         contactCache = null;
-        returntoHomePage();
+        returnToHomePage();
     }
 
     public void delete(ContactData contact) {
         initContactModificationById(contact.getId());
         deletedSelectionContact();
         contactCache = null;
-        returntoHomePage();
+        returnToHomePage();
     }
 
     public boolean isThereAContact() {
@@ -147,26 +146,25 @@ public class ContactHelper extends HelperBase {
     }
 
 
-
-
     public void selectContactById(int id) {
         wd.findElement(By.xpath("//input[@value = '" + id + "']")).click();
     }
 
     public void contactToGroup(ContactData contact) {
         selectContactById(contact.getId());
-        Set<String> groupsList = wd.findElements(By.xpath("//select[@name='to_group']/option")).stream().map((s) -> s.getText()).collect(Collectors.toSet());
-        /*
-        for (GroupData g : contact.getGroups()){
-            String grName = g.getName();
-            groupsList.remove(grName);
-        }
-        */
-        new Select(wd.findElement(By.xpath("//select[@name = 'to_group']"))).selectByVisibleText(groupsList.iterator().next());
+        Set<String> groupsList = wd.findElements(By.xpath("//select[@name='to_group']/option"))
+                .stream().map((s) -> s.getText()).collect(Collectors.toSet());
+        new Select(wd.findElement(By.xpath("//select[@name = 'to_group']")))
+                .selectByVisibleText(groupsList.iterator().next());
         click(By.xpath("//input[@name = 'add']"));
-
-
     }
 
+    public void deleteContactFromGroup(ContactData contact) {
+        selectContactById(contact.getId());
+        click(By.name("remove"));
+    }
 
+    public void selectDeletedGroupFromList(GroupData group){
+        new Select(wd.findElement(By.xpath("//select[@name = 'group']"))).selectByVisibleText(group.getName());
+    }
 }
