@@ -23,10 +23,6 @@ private Set<ContactData> delegate;
     }
 
 
-    @Override
-    protected Set<ContactData> delegate() {
-        return delegate;
-    }
 
     public Contacts withAdded(ContactData contact) {
         Contacts contacts = new Contacts(this);
@@ -34,9 +30,16 @@ private Set<ContactData> delegate;
         return contacts;
     }
 
-    public Contacts without(ContactData contact) {
+    public Contacts withOut(ContactData contact) {
         Contacts contacts = new Contacts(this);
         contacts.remove(contact);
         return contacts;
+    }
+
+
+
+    @Override
+    protected Set<ContactData> delegate() {
+        return delegate;
     }
 }
