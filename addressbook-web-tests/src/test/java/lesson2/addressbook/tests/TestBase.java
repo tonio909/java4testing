@@ -1,9 +1,16 @@
 package lesson2.addressbook.tests;
 
 import lesson2.addressbook.appmanager.ApplicationManager;
+import lesson2.addressbook.model.GroupData;
+import lesson2.addressbook.model.Groups;
+import org.hamcrest.CoreMatchers;
 import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+
+import java.util.stream.Collectors;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TestBase {
 
@@ -20,4 +27,14 @@ public class TestBase {
         app.stop();
     }
 
+
+    public void verifyGroupListInUI() {
+        if (Boolean.getBoolean("verifyUI")) {
+            Groups dbGroups = app.db().groups();
+            Groups uiGroups = app.group().all();
+            assertThat(uiGroups, CoreMatchers.equalTo(dbGroups.stream()
+                    .map((g) -> new GroupData().withId(g.getId()).withName(g.getName()))
+                    .collect(Collectors.toSet())));
+        }
+    }
 }
