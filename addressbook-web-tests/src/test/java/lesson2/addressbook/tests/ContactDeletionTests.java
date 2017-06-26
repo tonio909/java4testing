@@ -27,8 +27,8 @@ public class ContactDeletionTests extends TestBase {
                     .withLastname("Alekseev")
                     .withAddress("SPb")
                     .withMobilephone("+79119004004")
-                    .withEmail("anton.v.alekseev@yandex.ru")
-                    .withGroup("Group Name"));
+                    .withEmail("anton.v.alekseev@yandex.ru"));
+                    //.withGroup("Group Name"));
         }
     }
 

@@ -80,7 +80,7 @@ public class ContactDataGenerator {
                     contact.getEmail(),
                     contact.getEmail2(),
                     contact.getEmail3(),
-                    contact.getGroup(),
+                    //contact.getGroup(),
                     contact.getPhoto()));
         }
         writer.close();
@@ -99,7 +99,7 @@ public class ContactDataGenerator {
                     .withEmail(String.format("anton.v.alekseev@yandex.ru %s", i))
                     .withEmail2(String.format("anton-v-alekseev@yandex.ru %s", i))
                     .withEmail3(String.format("anton.v.alekseev@ya.ru %s", i))
-                    .withGroup(String.format("Group Name"))
+                    //.withGroup(String.format("Group Name"))
                     .withPhoto(new File("src/test/resources/img0.jpg")));
         }
         return contacts;

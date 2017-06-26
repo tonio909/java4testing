@@ -23,8 +23,8 @@ public class ContactPhoneTest extends TestBase{
                     .withWorkphone("+78129998877")
                     .withEmail("anton.v.alekseev@yandex.ru")
                     .withEmail2("anton-v-alekseev@yandex.ru")
-                    .withEmail3("anton.v.alekseev@ya.ru")
-                    .withGroup("Group Name"));
+                    .withEmail3("anton.v.alekseev@ya.ru"));
+                    //.withGroup("Group Name"));
         }
     }
 

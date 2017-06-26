@@ -27,8 +27,8 @@ public class ContactModificationTests extends TestBase{
                     .withLastname("Alekseev")
                     .withAddress("SPb")
                     .withMobilephone("+79119004004")
-                    .withEmail("anton.v.alekseev@yandex.ru")
-                    .withGroup("Group Name"));
+                    .withEmail("anton.v.alekseev@yandex.ru"));
+                    //.withGroup("Group Name"));
         }
     }
 
@@ -42,8 +42,8 @@ public class ContactModificationTests extends TestBase{
                 .withLastname("Alekseev (edited)")
                 .withAddress("SPb (edited)")
                 .withMobilephone("+79119004004 (edited)")
-                .withEmail("anton.v.alekseev@yandex.ru (edited)")
-                .withGroup("Group Name");
+                .withEmail("anton.v.alekseev@yandex.ru (edited)");
+                //.withGroup("Group Name");
         app.contact().modify(contact);
         assertThat(app.contact().count(), equalTo(before.size()));
         Contacts after = app.db().contacts();
