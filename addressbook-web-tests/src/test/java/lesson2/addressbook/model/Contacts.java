@@ -22,6 +22,7 @@ private Set<ContactData> delegate;
         this.delegate = new HashSet<ContactData>(contacts);
     }
 
+
     @Override
     protected Set<ContactData> delegate() {
         return delegate;

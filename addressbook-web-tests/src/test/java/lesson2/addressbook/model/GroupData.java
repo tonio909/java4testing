@@ -43,7 +43,7 @@ public class GroupData {
 
 
     public Set<ContactData> getContacts() {
-        return new Contacts(contacts);
+        return contacts;
     }
 
     public GroupData withId(int id) {

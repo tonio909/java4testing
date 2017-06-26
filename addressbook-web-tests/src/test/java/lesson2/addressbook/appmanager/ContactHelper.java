@@ -1,5 +1,6 @@
 package lesson2.addressbook.appmanager;
 
+import lesson2.addressbook.model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,6 +9,8 @@ import org.testng.Assert;
 import lesson2.addressbook.model.ContactData;
 import lesson2.addressbook.model.Contacts;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 public class ContactHelper extends HelperBase {
@@ -142,4 +145,28 @@ public class ContactHelper extends HelperBase {
                 .withEmail2(email2)
                 .withEmail3(email3);
     }
+
+
+
+
+    public void selectContactById(int id) {
+        wd.findElement(By.xpath("//input[@value = '" + id + "']")).click();
+    }
+
+    public void contactToGroup(ContactData contact) {
+        selectContactById(contact.getId());
+        Set<String> groupsList = wd.findElements(By.xpath("//select[@name='to_group']/option")).stream().map((s) -> s.getText()).collect(Collectors.toSet());
+        /*
+        for (GroupData g : contact.getGroups()){
+            String grName = g.getName();
+            groupsList.remove(grName);
+        }
+        */
+        new Select(wd.findElement(By.xpath("//select[@name = 'to_group']"))).selectByVisibleText(groupsList.iterator().next());
+        click(By.xpath("//input[@name = 'add']"));
+
+
+    }
+
+
 }
