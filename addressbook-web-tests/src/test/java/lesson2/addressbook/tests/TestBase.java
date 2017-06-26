@@ -9,10 +9,9 @@ import org.hamcrest.CoreMatchers;
 import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-
 import java.util.stream.Collectors;
-
 import static org.hamcrest.MatcherAssert.assertThat;
+
 
 public class TestBase {
 
@@ -45,7 +44,7 @@ public class TestBase {
             Contacts dbContacts = app.db().contacts();
             Contacts uiContacts = app.contact().all();
             assertThat(uiContacts, CoreMatchers.equalTo(dbContacts.stream()
-                    .map((g) -> new ContactData().withId(g.getId()).withFirstname(g.getFirstname()))
+                    .map((cont) -> new ContactData().withId(cont.getId()).withFirstname(cont.getFirstname()))
                     .collect(Collectors.toSet())));
         }
     }
