@@ -40,14 +40,6 @@ public class DbHelper {
         return new Contacts (result);
     }
 
-    public GroupData groupById(int id){
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        GroupData group = (GroupData) session.createQuery( "from GroupData where group_id = '" + id + "'").getSingleResult();
-        session.getTransaction().commit();
-        session.close();
-        return group;
-    }
 
     public ContactData contactById(int id){
         Session session = sessionFactory.openSession();
@@ -56,5 +48,28 @@ public class DbHelper {
         session.getTransaction().commit();
         session.close();
         return contact;
+    }
+
+    public Contacts contactsAreNotInGroup() {
+        Contacts result = new Contacts();
+        Groups groupsFull = groups();
+        Contacts contactsFull = contacts();
+        for (ContactData contact : contactsFull) {
+            if (contact.getGroups().size() < groupsFull.size()) {
+                result.add(contact);
+            }
+        }
+        return new Contacts(result);
+    }
+
+    public Contacts contactsInGroup() {
+        Contacts result = new Contacts();
+        Contacts contactsFull = contacts();
+        for (ContactData contact : contactsFull) {
+            if (contact.getGroups().size() > 0) {
+                result.add(contact);
+            }
+        }
+        return new Contacts(result);
     }
 }

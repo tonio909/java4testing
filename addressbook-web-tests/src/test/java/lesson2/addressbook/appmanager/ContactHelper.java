@@ -28,7 +28,7 @@ public class ContactHelper extends HelperBase {
 
 
     public void fillContactForm(ContactData contactData, boolean creation) {
-        type(By.name("firstname"), contactData.getFirstname());
+        type(By.xpath("//form[@name=\"theform\"]//input[@name=\"firstname\"]"), contactData.getFirstname());
         type(By.name("lastname"), contactData.getLastname());
         type(By.name("address"), contactData.getAddress());
         type(By.name("home"), contactData.getHomephone());
@@ -166,5 +166,14 @@ public class ContactHelper extends HelperBase {
 
     public void selectDeletedGroupFromList(GroupData group){
         new Select(wd.findElement(By.xpath("//select[@name = 'group']"))).selectByVisibleText(group.getName());
+    }
+
+    public void addContactToGroup(int id) {
+        wd.findElement(By.xpath("//select[@name='group']//option[@value='" + "" + "']")).click();
+        click(By.cssSelector("input[name='add']"));
+    }
+
+    public void clickOnContactCheckbox(int id) {
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 }

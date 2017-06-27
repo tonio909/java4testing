@@ -78,8 +78,6 @@ public class ContactData {
     private Set<GroupData> groups = new HashSet<GroupData>();
 
 
-
-
     public int getId() {
         return id;
     }
@@ -204,7 +202,12 @@ public class ContactData {
 
 
     public Groups getGroups() {
-        return new Groups (groups);
+        return new Groups(groups);
+    }
+
+    public ContactData inGroup(GroupData group) {
+        groups.add(group);
+        return this;
     }
 
     @Override
