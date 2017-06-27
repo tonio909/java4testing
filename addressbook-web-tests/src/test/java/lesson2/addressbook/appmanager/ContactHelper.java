@@ -147,16 +147,7 @@ public class ContactHelper extends HelperBase {
 
 
     public void selectContactById(int id) {
-        wd.findElement(By.xpath("//input[@value = '" + id + "']")).click();
-    }
-
-    public void contactToGroup(ContactData contact) {
-        selectContactById(contact.getId());
-        Set<String> groupsList = wd.findElements(By.xpath("//select[@name='to_group']/option"))
-                .stream().map((s) -> s.getText()).collect(Collectors.toSet());
-        new Select(wd.findElement(By.xpath("//select[@name = 'to_group']")))
-                .selectByVisibleText(groupsList.iterator().next());
-        click(By.xpath("//input[@name = 'add']"));
+        wd.findElement(By.xpath("//input[@value='"+id+"']")).click();
     }
 
     public void deleteContactFromGroup(ContactData contact) {
