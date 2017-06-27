@@ -61,15 +61,4 @@ public class DbHelper {
         }
         return new Contacts(result);
     }
-
-    public Contacts contactsInGroup() {
-        Contacts result = new Contacts();
-        Contacts contactsFull = contacts();
-        for (ContactData contact : contactsFull) {
-            if (contact.getGroups().size() > 0) {
-                result.add(contact);
-            }
-        }
-        return new Contacts(result);
-    }
 }

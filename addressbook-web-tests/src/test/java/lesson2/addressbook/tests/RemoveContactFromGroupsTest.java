@@ -28,15 +28,6 @@ public class RemoveContactFromGroupsTest extends TestBase {
                     .withLastname("Alekseev"));
         }
 
-        if (app.db().contactsInGroup().isEmpty()) {
-            app.goTo().gotoHomePage();
-            Groups group = app.db().groups();
-            ContactData modifiedContact = app.db().contactsAreNotInGroup().iterator().next();
-            GroupData addedGroup = group.iterator().next();
-            app.contact().clickOnContactCheckbox(modifiedContact.getId());
-            app.contact().addContactToGroup(addedGroup.getId());
-        }
-/*
         for (ContactData contact : contacts) {
             if (contact.getGroups().isEmpty()) {
                 app.goTo().gotoHomePage();
@@ -45,7 +36,7 @@ public class RemoveContactFromGroupsTest extends TestBase {
                 app.contact().addContactToGroup(modifiedContact.getId());
             }
         }
-*/
+
     }
 
     @Test
