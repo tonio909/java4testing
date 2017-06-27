@@ -16,22 +16,16 @@ public class AddRemoveContactToGroupTest extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() {
-        //Проверяем существует ли группа для добавления контакта в следующем шаге
         app.goTo().groupPage();
         if (app.group().all().isEmpty()) {
             app.group().create(new GroupData()
                     .withName("Group Name"));
         }
-        //Проверяем есть ли контакт для удаления
         app.goTo().gotoHomePage();
         if (app.contact().all().isEmpty()) {
             app.contact().create(new ContactData()
                     .withFirstname("Anton")
-                    .withLastname("Alekseev")
-                    .withAddress("SPb")
-                    .withMobilephone("+79119004004")
-                    .withEmail("anton.v.alekseev@yandex.ru"));
-            //.withGroup("Group Name"));
+                    .withLastname("Alekseev"));
         }
     }
 
