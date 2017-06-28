@@ -9,7 +9,6 @@ import lesson2.addressbook.model.Contacts;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-
 public class RemoveContactFromGroupsTest extends TestBase {
 
     @BeforeMethod
@@ -37,7 +36,6 @@ public class RemoveContactFromGroupsTest extends TestBase {
                 app.contact().addContactToGroup(addedGroup.getId());
         }
     }
-
 
     @Test
     public void testRemoveContactFromGroup() {

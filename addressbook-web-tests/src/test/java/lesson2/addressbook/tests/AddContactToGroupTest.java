@@ -9,7 +9,6 @@ import lesson2.addressbook.model.Contacts;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-
 public class AddContactToGroupTest extends TestBase {
 
     @BeforeMethod
@@ -32,7 +31,6 @@ public class AddContactToGroupTest extends TestBase {
                     .withLastname("Alekseev"));
         }
     }
-
 
     @Test
     public void testAddContactToGroup() {
