@@ -64,8 +64,8 @@ public class DbHelper {
 
     public Contacts contactsAreInGroup() {
         Contacts result = new Contacts();
-        Contacts contacts = contacts();
-        for (ContactData contact : contacts) {
+        Contacts contactsFull = contacts();
+        for (ContactData contact : contactsFull) {
             if (contact.getGroups().size() > 0) {
                 result.add(contact);
             }
