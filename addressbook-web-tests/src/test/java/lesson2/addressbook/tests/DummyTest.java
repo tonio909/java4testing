@@ -7,7 +7,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.ArrayList;
 import org.openqa.selenium.WebDriver;
+
+import static java.awt.SystemColor.window;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -33,7 +37,9 @@ public class DummyTest extends DummyTestHelper {
             String name = setOfElements.getText();
             System.out.println("Имя = " + name);
 
-            Assert.assertEquals(name, "Alekseev");
+
+            Assert.assertEquals(name, "Alekseev Anton");
+            Assert.assertTrue(name.startsWith("Alekseev"));
 
         }
 
