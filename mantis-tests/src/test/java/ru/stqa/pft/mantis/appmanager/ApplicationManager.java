@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,12 +16,13 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
     private final Properties properies;
     private WebDriver wd;
-
     private String browser;
     private RegistrationHelper registrationHelper;
     private FtpHelper ftp;
     private MailHelper mailHelper;
     private JamesHelper jamesHelper;
+    private DbHelper dbHelper;
+    private UserHelper userHelper;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -75,17 +77,31 @@ public class ApplicationManager {
         return wd;
     }
 
-    public MailHelper mail () {
+    public MailHelper mail() {
         if (mailHelper == null) {
             mailHelper = new MailHelper(this);
         }
         return mailHelper;
     }
 
-    public JamesHelper james () {
+    public JamesHelper james() {
         if (jamesHelper == null) {
             jamesHelper = new JamesHelper(this);
         }
         return jamesHelper;
+    }
+
+    public DbHelper db() {
+        if (dbHelper == null) {
+            dbHelper = new DbHelper();
+        }
+        return dbHelper;
+    }
+
+    public UserHelper getUserHelper() {
+        if (userHelper == null) {
+            userHelper = new UserHelper(this);
+        }
+        return userHelper;
     }
 }
