@@ -38,11 +38,14 @@ public class DummyTest extends DummyTestHelper {
             System.out.println("Имя = " + name);
 
 
-            Assert.assertEquals(name, "Alekseev Anton");
+            //Assert.assertEquals(name, "Alekseev Anton");
             Assert.assertTrue(name.startsWith("Alekseev"));
 
         }
 
+        List<WebElement> elements1 = new ArrayList<WebElement>() {
+        return elements1;
+        };
 
 
 
