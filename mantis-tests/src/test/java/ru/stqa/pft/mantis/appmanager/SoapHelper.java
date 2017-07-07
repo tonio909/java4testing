@@ -35,14 +35,14 @@ public class SoapHelper {
 
     public Issue addIssue(Issue issue) throws MalformedURLException, ServiceException, RemoteException {
         MantisConnectPortType mc = getMantisConnect();
-        String[] categories = mc.mc_project_get_categories("administrator", "root", BigInteger.valueOf(issue.getProject().getId()));
+        String[] categories = mc.mc_project_get_categories(app.getProperty("web.adminLogin"), app.getProperty("web.adminPass"), BigInteger.valueOf(issue.getProject().getId()));
         IssueData issueData = new IssueData();
         issueData.setSummary(issue.getSummary());
         issueData.setDescription(issue.getDescription());
         issueData.setProject(new ObjectRef(BigInteger.valueOf(issue.getProject().getId()), issue.getProject().getName()));
         issueData.setCategory(categories[0]);
-        BigInteger issueId = mc.mc_issue_add("administrator", "root", issueData);
-        IssueData createdIssueData = mc.mc_issue_get("administrator", "root", issueId);
+        BigInteger issueId = mc.mc_issue_add(app.getProperty("web.adminLogin"), app.getProperty("web.adminPass"), issueData);
+        IssueData createdIssueData = mc.mc_issue_get(app.getProperty("web.adminLogin"), app.getProperty("web.adminPass"), issueId);
         return new Issue()
                 .withId(createdIssueData.getId().intValue())
                 .withSummary(createdIssueData.getSummary())
@@ -50,5 +50,10 @@ public class SoapHelper {
                 .withProject(new Project()
                 .withId(createdIssueData.getProject().getId().intValue())
                 .withName(createdIssueData.getProject().getName()));
+    }
+
+    public String getStatusById(int issueId) throws MalformedURLException, ServiceException, RemoteException {
+        MantisConnectPortType mc = getMantisConnect();
+        return mc.mc_issue_get(app.getProperty("web.adminLogin"), app.getProperty("web.adminPass"), BigInteger.valueOf(issueId)).getStatus().getName();
     }
 }
