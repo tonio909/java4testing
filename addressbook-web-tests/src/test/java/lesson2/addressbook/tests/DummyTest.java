@@ -44,7 +44,7 @@ public class DummyTest extends DummyTestHelper {
         }
 
         List<WebElement> elements1 = new ArrayList<WebElement>() {
-        return elements1;
+        //return elements1;
         };
 
 
