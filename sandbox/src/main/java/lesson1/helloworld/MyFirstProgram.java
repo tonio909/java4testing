@@ -6,7 +6,7 @@ public class MyFirstProgram {
 
         Rectangle r = new Rectangle(7,9);
 
-        System.out.println("Площадь прямоугольника cо сторонами " + r.a + " и " + r.b + " = " + square(r));
+        System.out.println("Square of triangle is " + r.a + " и " + r.b + " = " + square(r));
     }
 
 
