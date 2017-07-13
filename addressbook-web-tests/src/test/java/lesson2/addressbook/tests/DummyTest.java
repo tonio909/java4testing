@@ -38,7 +38,7 @@ public class DummyTest extends DummyTestHelper {
             System.out.println("Имя = " + name);
 
 
-            //Assert.assertEquals(name, "Alekseev Anton");
+            //Assert.assertEquals(name, "Alekseev Anton111");
             //Assert.assertTrue(name.startsWith("Alekseev"));
 
         }
