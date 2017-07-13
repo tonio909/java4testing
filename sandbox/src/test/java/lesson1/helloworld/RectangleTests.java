@@ -11,6 +11,5 @@ public class RectangleTests {
 
         Rectangle r = new Rectangle(5,5);
         Assert.assertEquals(square(r),25.0);
-
     }
 }
