@@ -35,10 +35,10 @@ public class DummyTest extends DummyTestHelper {
         List<WebElement> elements = selenium.findElements(By.xpath("//tr[@name='entry']"));
         for (WebElement setOfElements : elements) {
             String name = setOfElements.getText();
-            System.out.println("Имя = " + name);
+            System.out.println("Name = " + name);
 
 
-            //Assert.assertEquals(name, "Alekseev Anton111");
+            //Assert.assertEquals(name, "Alekseev Anton");
             //Assert.assertTrue(name.startsWith("Alekseev"));
 
         }

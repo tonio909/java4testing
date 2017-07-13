@@ -13,13 +13,13 @@ public class ContactModificationTests extends TestBase{
 
     @BeforeMethod
     public void ensurePreconditions() {
-        //Проверяем существует ли группа для добавления контакта в следующем шаге
+
         app.goTo().groupPage();
         if (app.group().all().isEmpty()) {
             app.group().create(new GroupData()
                     .withName("Group Name"));
         }
-        //Проверяем есть ли контакт для удаления
+
         app.goTo().gotoHomePage();
         if (app.contact().all().isEmpty()) {
             app.contact().create(new ContactData()

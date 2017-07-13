@@ -53,7 +53,6 @@ public class ContactCreationTests extends TestBase {
 
 
     @BeforeMethod
-    //Проверяем существует ли группа для добавления контакта в следующем шаге
     public void ensurePreconditions() {
         app.goTo().groupPage();
         if (app.group().all().isEmpty()) {
@@ -63,7 +62,6 @@ public class ContactCreationTests extends TestBase {
     }
 
     @Test(dataProvider = "validContactsFromJson")
-    //Добавляем контакт
     public void testContactCreation(ContactData contact) {
         Groups groups = app.db().groups();
         app.goTo().gotoHomePage();
