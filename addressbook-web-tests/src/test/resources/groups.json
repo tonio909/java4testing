@@ -3,25 +3,5 @@
     "name": "Group Name 0",
     "header": "Group Header 0",
     "footer": "Group Footer 0"
-  },
-  {
-    "name": "Group Name 1",
-    "header": "Group Header 1",
-    "footer": "Group Footer 1"
-  },
-  {
-    "name": "Group Name 2",
-    "header": "Group Header 2",
-    "footer": "Group Footer 2"
-  },
-  {
-    "name": "Group Name 3",
-    "header": "Group Header 3",
-    "footer": "Group Footer 3"
-  },
-  {
-    "name": "Group Name 4",
-    "header": "Group Header 4",
-    "footer": "Group Footer 4"
   }
 ]
